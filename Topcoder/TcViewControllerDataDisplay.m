@@ -72,7 +72,7 @@
     
     
     range.location = range.location+7;
-    range.length = range.length-7- [passedValue length] -2;
+    range.length = range.length-7- [passedValue length] -1;
     NSMutableString *result = [string substringWithRange:range];
     
     //NSLog(@"%i",range.location);
