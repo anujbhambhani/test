@@ -48,16 +48,12 @@
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection{
     NSString *dataString=[[NSString alloc]initWithData:downloadData encoding:NSUTF8StringEncoding];
-    
-    
-    
     NSMutableString *string1 = [NSMutableString stringWithString: dataString];
     //adding regex
     NSMutableString *string  =string1;
     NSError  *error  = NULL;
     NSMutableString *regx=[NSMutableString stringWithString:@"title=\".?.?.?.?.?\">"];
     [regx appendString:passedValue];
-    
     NSRegularExpression *regex = [NSRegularExpression 
                                   regularExpressionWithPattern:regx
                                   options:0
@@ -68,17 +64,13 @@
                                                  range:NSMakeRange(0, [string length])];
     
     NSLog(@"%i %i",range.location,range.length);
-    
-    
-    
     range.location = range.location+7;
     range.length = range.length-7- [passedValue length] -2;
     NSMutableString *result = [string substringWithRange:range];
-    
-    //NSLog(@"%i",range.location);
-    
-    //NSLog(@"result=%@",result);
-    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *stringsPlistPath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Strings.plist"];
+    NSArray  * stringsArray = [NSArray arrayWithObjects:@"foo",@"bar",@"baz",nil];
+    [stringsArray writeToFile:stringsPlistPath atomically:YES];
     label.text=result;
 }
 

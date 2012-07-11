@@ -116,15 +116,15 @@
 		EF90F1FB15ACC97600CB7BFC /* Topcoder */ = {
 			isa = PBXGroup;
 			children = (
+				EF90F22A15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.h */,
+				EF90F22B15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m */,
+				EF90F22C15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib */,
 				EF90F20415ACC97600CB7BFC /* TcAppDelegate.h */,
 				EF90F20515ACC97600CB7BFC /* TcAppDelegate.m */,
 				EF90F20715ACC97600CB7BFC /* TcViewController.h */,
 				EF90F20815ACC97600CB7BFC /* TcViewController.m */,
 				EF90F20A15ACC97600CB7BFC /* TcViewController.xib */,
 				EF90F1FC15ACC97600CB7BFC /* Supporting Files */,
-				EF90F22A15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.h */,
-				EF90F22B15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m */,
-				EF90F22C15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib */,
 			);
 			path = Topcoder;
 			sourceTree = "<group>";

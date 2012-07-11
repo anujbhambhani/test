@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-NSMutableData* downloadData;
+
 @interface TcViewControllerDataDisplay : UIViewController{
     NSString *passedValue;
 }

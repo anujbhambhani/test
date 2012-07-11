@@ -7,10 +7,20 @@
 
 #import <UIKit/UIKit.h>
 #import "TcViewControllerDataDisplay.h"
+NSMutableData* downloadData;
 @interface TcViewController : UIViewController<UITextFieldDelegate>{
     TcViewControllerDataDisplay *secondviewData;
+    NSString *listPath;
+    NSMutableArray *array; 
+    NSMutableString *currentHandle;
+    NSMutableDictionary *dictionary;
+    int counter;
+    int noOfHandles;
 }
 - (IBAction)passData:(id)sender;
+-(NSString*) dataFilePath;
+-(void)readPlist;
+-(void)writePlist;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic,retain) TcViewControllerDataDisplay *secondviewData;
 @end
