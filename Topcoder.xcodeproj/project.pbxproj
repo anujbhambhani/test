@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF90F1F615ACC97600CB7BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F515ACC97600CB7BFC /* UIKit.framework */; };
+		EF90F1F815ACC97600CB7BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F715ACC97600CB7BFC /* Foundation.framework */; };
+		EF90F1FA15ACC97600CB7BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F915ACC97600CB7BFC /* CoreGraphics.framework */; };
+		EF90F20015ACC97600CB7BFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF90F1FE15ACC97600CB7BFC /* InfoPlist.strings */; };
+		EF90F20215ACC97600CB7BFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F20115ACC97600CB7BFC /* main.m */; };
+		EF90F20615ACC97600CB7BFC /* TcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F20515ACC97600CB7BFC /* TcAppDelegate.m */; };
+		EF90F20915ACC97600CB7BFC /* TcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F20815ACC97600CB7BFC /* TcViewController.m */; };
+		EF90F20C15ACC97600CB7BFC /* TcViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90F20A15ACC97600CB7BFC /* TcViewController.xib */; };
+		EF90F21415ACC97600CB7BFC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F21315ACC97600CB7BFC /* SenTestingKit.framework */; };
+		EF90F21515ACC97600CB7BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F515ACC97600CB7BFC /* UIKit.framework */; };
+		EF90F21615ACC97600CB7BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F715ACC97600CB7BFC /* Foundation.framework */; };
+		EF90F21E15ACC97600CB7BFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF90F21C15ACC97600CB7BFC /* InfoPlist.strings */; };
+		EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F22015ACC97600CB7BFC /* TopcoderTests.m */; };
+		EF90F22D15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F22B15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m */; };
+		EF90F22E15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF90F22C15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF90F21715ACC97600CB7BFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF90F1E815ACC97500CB7BFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF90F1F015ACC97500CB7BFC;
+			remoteInfo = Topcoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF90F1F115ACC97500CB7BFC /* Topcoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Topcoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF90F1F515ACC97600CB7BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EF90F1F715ACC97600CB7BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EF90F1F915ACC97600CB7BFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EF90F1FD15ACC97600CB7BFC /* Topcoder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Topcoder-Info.plist"; sourceTree = "<group>"; };
+		EF90F1FF15ACC97600CB7BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF90F20115ACC97600CB7BFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF90F20315ACC97600CB7BFC /* Topcoder-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Topcoder-Prefix.pch"; sourceTree = "<group>"; };
+		EF90F20415ACC97600CB7BFC /* TcAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcAppDelegate.h; sourceTree = "<group>"; };
+		EF90F20515ACC97600CB7BFC /* TcAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TcAppDelegate.m; sourceTree = "<group>"; };
+		EF90F20715ACC97600CB7BFC /* TcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TcViewController.h; sourceTree = "<group>"; };
+		EF90F20815ACC97600CB7BFC /* TcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TcViewController.m; sourceTree = "<group>"; };
+		EF90F20B15ACC97600CB7BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TcViewController.xib; sourceTree = "<group>"; };
+		EF90F21215ACC97600CB7BFC /* TopcoderTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopcoderTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF90F21315ACC97600CB7BFC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		EF90F21B15ACC97600CB7BFC /* TopcoderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TopcoderTests-Info.plist"; sourceTree = "<group>"; };
+		EF90F21D15ACC97600CB7BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF90F21F15ACC97600CB7BFC /* TopcoderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopcoderTests.h; sourceTree = "<group>"; };
+		EF90F22015ACC97600CB7BFC /* TopcoderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopcoderTests.m; sourceTree = "<group>"; };
+		EF90F22A15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcViewControllerDataDisplay.h; sourceTree = "<group>"; };
+		EF90F22B15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TcViewControllerDataDisplay.m; sourceTree = "<group>"; };
+		EF90F22C15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TcViewControllerDataDisplay.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF90F1EE15ACC97500CB7BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF90F1F615ACC97600CB7BFC /* UIKit.framework in Frameworks */,
+				EF90F1F815ACC97600CB7BFC /* Foundation.framework in Frameworks */,
+				EF90F1FA15ACC97600CB7BFC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF90F20E15ACC97600CB7BFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF90F21415ACC97600CB7BFC /* SenTestingKit.framework in Frameworks */,
+				EF90F21515ACC97600CB7BFC /* UIKit.framework in Frameworks */,
+				EF90F21615ACC97600CB7BFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF90F1E615ACC97500CB7BFC = {
+			isa = PBXGroup;
+			children = (
+				EF90F1FB15ACC97600CB7BFC /* Topcoder */,
+				EF90F21915ACC97600CB7BFC /* TopcoderTests */,
+				EF90F1F415ACC97500CB7BFC /* Frameworks */,
+				EF90F1F215ACC97500CB7BFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF90F1F215ACC97500CB7BFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF90F1F115ACC97500CB7BFC /* Topcoder.app */,
+				EF90F21215ACC97600CB7BFC /* TopcoderTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF90F1F415ACC97500CB7BFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF90F1F515ACC97600CB7BFC /* UIKit.framework */,
+				EF90F1F715ACC97600CB7BFC /* Foundation.framework */,
+				EF90F1F915ACC97600CB7BFC /* CoreGraphics.framework */,
+				EF90F21315ACC97600CB7BFC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF90F1FB15ACC97600CB7BFC /* Topcoder */ = {
+			isa = PBXGroup;
+			children = (
+				EF90F20415ACC97600CB7BFC /* TcAppDelegate.h */,
+				EF90F20515ACC97600CB7BFC /* TcAppDelegate.m */,
+				EF90F20715ACC97600CB7BFC /* TcViewController.h */,
+				EF90F20815ACC97600CB7BFC /* TcViewController.m */,
+				EF90F20A15ACC97600CB7BFC /* TcViewController.xib */,
+				EF90F1FC15ACC97600CB7BFC /* Supporting Files */,
+				EF90F22A15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.h */,
+				EF90F22B15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m */,
+				EF90F22C15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib */,
+			);
+			path = Topcoder;
+			sourceTree = "<group>";
+		};
+		EF90F1FC15ACC97600CB7BFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF90F1FD15ACC97600CB7BFC /* Topcoder-Info.plist */,
+				EF90F1FE15ACC97600CB7BFC /* InfoPlist.strings */,
+				EF90F20115ACC97600CB7BFC /* main.m */,
+				EF90F20315ACC97600CB7BFC /* Topcoder-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF90F21915ACC97600CB7BFC /* TopcoderTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF90F21F15ACC97600CB7BFC /* TopcoderTests.h */,
+				EF90F22015ACC97600CB7BFC /* TopcoderTests.m */,
+				EF90F21A15ACC97600CB7BFC /* Supporting Files */,
+			);
+			path = TopcoderTests;
+			sourceTree = "<group>";
+		};
+		EF90F21A15ACC97600CB7BFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF90F21B15ACC97600CB7BFC /* TopcoderTests-Info.plist */,
+				EF90F21C15ACC97600CB7BFC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF90F1F015ACC97500CB7BFC /* Topcoder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF90F22415ACC97600CB7BFC /* Build configuration list for PBXNativeTarget "Topcoder" */;
+			buildPhases = (
+				EF90F1ED15ACC97500CB7BFC /* Sources */,
+				EF90F1EE15ACC97500CB7BFC /* Frameworks */,
+				EF90F1EF15ACC97500CB7BFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Topcoder;
+			productName = Topcoder;
+			productReference = EF90F1F115ACC97500CB7BFC /* Topcoder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF90F21115ACC97600CB7BFC /* TopcoderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF90F22715ACC97600CB7BFC /* Build configuration list for PBXNativeTarget "TopcoderTests" */;
+			buildPhases = (
+				EF90F20D15ACC97600CB7BFC /* Sources */,
+				EF90F20E15ACC97600CB7BFC /* Frameworks */,
+				EF90F20F15ACC97600CB7BFC /* Resources */,
+				EF90F21015ACC97600CB7BFC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF90F21815ACC97600CB7BFC /* PBXTargetDependency */,
+			);
+			name = TopcoderTests;
+			productName = TopcoderTests;
+			productReference = EF90F21215ACC97600CB7BFC /* TopcoderTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF90F1E815ACC97500CB7BFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Tc;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "anuj.bhambhani@gmail.com";
+			};
+			buildConfigurationList = EF90F1EB15ACC97500CB7BFC /* Build configuration list for PBXProject "Topcoder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EF90F1E615ACC97500CB7BFC;
+			productRefGroup = EF90F1F215ACC97500CB7BFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF90F1F015ACC97500CB7BFC /* Topcoder */,
+				EF90F21115ACC97600CB7BFC /* TopcoderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF90F1EF15ACC97500CB7BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF90F20015ACC97600CB7BFC /* InfoPlist.strings in Resources */,
+				EF90F20C15ACC97600CB7BFC /* TcViewController.xib in Resources */,
+				EF90F22E15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF90F20F15ACC97600CB7BFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF90F21E15ACC97600CB7BFC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EF90F21015ACC97600CB7BFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF90F1ED15ACC97500CB7BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF90F20215ACC97600CB7BFC /* main.m in Sources */,
+				EF90F20615ACC97600CB7BFC /* TcAppDelegate.m in Sources */,
+				EF90F20915ACC97600CB7BFC /* TcViewController.m in Sources */,
+				EF90F22D15ACCCCE00CB7BFC /* TcViewControllerDataDisplay.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF90F20D15ACC97600CB7BFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF90F21815ACC97600CB7BFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF90F1F015ACC97500CB7BFC /* Topcoder */;
+			targetProxy = EF90F21715ACC97600CB7BFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF90F1FE15ACC97600CB7BFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF90F1FF15ACC97600CB7BFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EF90F20A15ACC97600CB7BFC /* TcViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF90F20B15ACC97600CB7BFC /* en */,
+			);
+			name = TcViewController.xib;
+			sourceTree = "<group>";
+		};
+		EF90F21C15ACC97600CB7BFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF90F21D15ACC97600CB7BFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF90F22215ACC97600CB7BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EF90F22315ACC97600CB7BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF90F22515ACC97600CB7BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Topcoder/Topcoder-Prefix.pch";
+				INFOPLIST_FILE = "Topcoder/Topcoder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EF90F22615ACC97600CB7BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Topcoder/Topcoder-Prefix.pch";
+				INFOPLIST_FILE = "Topcoder/Topcoder-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EF90F22815ACC97600CB7BFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Topcoder.app/Topcoder";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Topcoder/Topcoder-Prefix.pch";
+				INFOPLIST_FILE = "TopcoderTests/TopcoderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EF90F22915ACC97600CB7BFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Topcoder.app/Topcoder";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Topcoder/Topcoder-Prefix.pch";
+				INFOPLIST_FILE = "TopcoderTests/TopcoderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF90F1EB15ACC97500CB7BFC /* Build configuration list for PBXProject "Topcoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF90F22215ACC97600CB7BFC /* Debug */,
+				EF90F22315ACC97600CB7BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF90F22415ACC97600CB7BFC /* Build configuration list for PBXNativeTarget "Topcoder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF90F22515ACC97600CB7BFC /* Debug */,
+				EF90F22615ACC97600CB7BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF90F22715ACC97600CB7BFC /* Build configuration list for PBXNativeTarget "TopcoderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF90F22815ACC97600CB7BFC /* Debug */,
+				EF90F22915ACC97600CB7BFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF90F1E815ACC97500CB7BFC /* Project object */;
+}
