@@ -82,7 +82,14 @@
 }
 
 -(void) connection:(NSURLConnection*) connection didFailWithError:(NSError *)error{
-    NSLog(@"Failed %@",[error description]);
+    NSLog(@"Anuj Failed %@",[error description]);
+    [self.textField resignFirstResponder];
+    [textField setEnabled:YES];
+    [passDataOutlet setEnabled:YES];
+    [backOutlet setEnabled:YES];
+    [viewStatusOutlet setEnabled:YES];
+    textField.text=@"";
+    [textField setPlaceholder:@"No Internet connection."];
 }
 -(void) connection:(NSURLConnection*) connection didReceiveResponse:(NSURLResponse *)response{
     downloadData = [NSMutableData data];
@@ -121,12 +128,6 @@
         range2.location=0;
         result1 = [result1 substringWithRange:range2];
         NSLog(@"result1=%@}}",result1);
-        
-        
-        
-        
-        
-        
         NSMutableString *regx=[NSMutableString stringWithString:@"title=\".?.?.?.?.?\">"];
         [regx appendString:result1];
         
@@ -188,6 +189,7 @@
     [backOutlet setHidden:NO];
 }
 - (IBAction)passData:(id)sender {
+     [textField setPlaceholder:@""];
     handleNotFound=NO;
     //[self writePlist];
     handleToTrack=textField.text;
