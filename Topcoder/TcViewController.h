@@ -16,6 +16,7 @@ NSMutableData* downloadData;
     NSMutableDictionary *dictionary;
     int counter;
     int noOfHandles;
+    bool handleNotFound;
 }
 @property (weak, nonatomic) IBOutlet UIButton *backOutlet;
 - (IBAction)back:(id)sender;

@@ -100,6 +100,11 @@
         NSRange range1   = [regex1 rangeOfFirstMatchInString:string
                                                      options:0 
                                                        range:NSMakeRange(0, [string length])];
+        if(range1.length==0)
+        {
+            handleNotFound=YES;
+            return;
+        }
         range1.length+=20;
         range1.location+=8;
         NSLog(@"%i %i",range1.location,range1.length);
@@ -135,7 +140,7 @@
         
         NSMutableString *result = [string substringWithRange:range];
         [dictionary setObject: result forKey: result1];
-        if(counter==noOfHandles)
+        if(counter==noOfHandles&&(!handleNotFound))
         {
             [self writePlist];
             NSLog(@"writing data completed");
@@ -169,6 +174,7 @@
     [backOutlet setHidden:NO];
 }
 - (IBAction)passData:(id)sender {
+    handleNotFound=NO;
     //[self writePlist];
     counter=0;
     [self readPlist];
@@ -190,8 +196,8 @@
     @catch (NSException *e) {
         NSLog(@"anuj exception=%@",e);
     }
-    [self writePlist];
-    [self readPlist];
+    //[self writePlist];
+    //[self readPlist];
 }
 - (IBAction)back:(id)sender {
     [viewOutlet setHidden:YES];
