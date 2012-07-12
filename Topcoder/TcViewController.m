@@ -13,6 +13,8 @@
 @end
 
 @implementation TcViewController
+@synthesize viewStatusOutlet;
+@synthesize passDataOutlet;
 @synthesize backOutlet;
 @synthesize viewOutlet;
 @synthesize textField;
@@ -59,6 +61,8 @@
     [self setTextField:nil];
     [self setViewOutlet:nil];
     [self setBackOutlet:nil];
+    [self setPassDataOutlet:nil];
+    [self setViewStatusOutlet:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -139,13 +143,22 @@
         range.location = range.location+7;
         range.length = range.length-7- [result1 length] -2;
         
-        NSMutableString *result = [string substringWithRange:range];
+        NSString *result = [string substringWithRange:range];
         [dictionary setObject: result forKey: result1];
         if(counter==noOfHandles&&(!handleNotFound))
         {
             [self writePlist];
             NSLog(@"writing data completed");
+            
+        }
+        if(counter==noOfHandles)
+        {
             [self.textField resignFirstResponder];
+            [textField setEnabled:YES];
+            [passDataOutlet setEnabled:YES];
+            [backOutlet setEnabled:YES];
+            [viewStatusOutlet setEnabled:YES];
+            textField.text=@"";
         }
     }
 }
@@ -178,8 +191,12 @@
     handleNotFound=NO;
     //[self writePlist];
     handleToTrack=textField.text;
+    textField.text=@"Adding to track list...";
     handleToTrack = [handleToTrack lowercaseString];
-                     
+    [textField setEnabled:NO];
+    [passDataOutlet setEnabled:NO];
+    [backOutlet setEnabled:NO];
+    [viewStatusOutlet setEnabled:NO];
     counter=0;
     [self readPlist];
     [dictionary setObject: @"1" forKey: handleToTrack];

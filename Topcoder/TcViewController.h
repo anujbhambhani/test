@@ -19,6 +19,8 @@ NSMutableData* downloadData;
     bool handleNotFound;
     NSString *handleToTrack;
 }
+@property (weak, nonatomic) IBOutlet UIButton *viewStatusOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *passDataOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *backOutlet;
 - (IBAction)back:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *viewOutlet;
