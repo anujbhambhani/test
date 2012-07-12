@@ -17,6 +17,7 @@ NSMutableData* downloadData;
     int counter;
     int noOfHandles;
     bool handleNotFound;
+    NSString *handleToTrack;
 }
 @property (weak, nonatomic) IBOutlet UIButton *backOutlet;
 - (IBAction)back:(id)sender;

@@ -88,11 +88,12 @@
     @synchronized(self){
         counter++;
         NSString *dataString=[[NSString alloc]initWithData:downloadData encoding:NSUTF8StringEncoding];
+        dataString = [dataString lowercaseString];
         NSMutableString *string1 = [NSMutableString stringWithString: dataString];
         //adding regex
         NSMutableString *string  =string1;
         NSError  *error  = NULL;
-        NSMutableString *regx1=[NSMutableString stringWithString:@"Petr vs "];
+        NSMutableString *regx1=[NSMutableString stringWithString:@"petr vs "];
         NSRegularExpression *regex1 = [NSRegularExpression 
                                        regularExpressionWithPattern:regx1
                                        options:0
@@ -176,9 +177,12 @@
 - (IBAction)passData:(id)sender {
     handleNotFound=NO;
     //[self writePlist];
+    handleToTrack=textField.text;
+    handleToTrack = [handleToTrack lowercaseString];
+                     
     counter=0;
     [self readPlist];
-    [dictionary setObject: @"1" forKey: textField.text];
+    [dictionary setObject: @"1" forKey: handleToTrack];
     for(id key in dictionary){
         NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
     }   
