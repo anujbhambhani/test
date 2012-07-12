@@ -20,7 +20,7 @@
 		EF90F21615ACC97600CB7BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F715ACC97600CB7BFC /* Foundation.framework */; };
 		EF90F21E15ACC97600CB7BFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF90F21C15ACC97600CB7BFC /* InfoPlist.strings */; };
 		EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F22015ACC97600CB7BFC /* TopcoderTests.m */; };
-		EFE9C72515AEA01E00EBC480 /* topcoder.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE9C72415AEA01E00EBC480 /* topcoder.png */; };
+		EFE9C72C15AEDB2D00EBC480 /* topcoder.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE9C72B15AEDB2D00EBC480 /* topcoder.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		EF90F21D15ACC97600CB7BFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EF90F21F15ACC97600CB7BFC /* TopcoderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopcoderTests.h; sourceTree = "<group>"; };
 		EF90F22015ACC97600CB7BFC /* TopcoderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopcoderTests.m; sourceTree = "<group>"; };
-		EFE9C72415AEA01E00EBC480 /* topcoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topcoder.png; sourceTree = "<group>"; };
+		EFE9C72B15AEDB2D00EBC480 /* topcoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topcoder.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 		EF90F1FC15ACC97600CB7BFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				EFE9C72415AEA01E00EBC480 /* topcoder.png */,
+				EFE9C72B15AEDB2D00EBC480 /* topcoder.png */,
 				EF90F1FD15ACC97600CB7BFC /* Topcoder-Info.plist */,
 				EF90F1FE15ACC97600CB7BFC /* InfoPlist.strings */,
 				EF90F20115ACC97600CB7BFC /* main.m */,
@@ -228,7 +228,7 @@
 			files = (
 				EF90F20015ACC97600CB7BFC /* InfoPlist.strings in Resources */,
 				EF90F20C15ACC97600CB7BFC /* TcViewController.xib in Resources */,
-				EFE9C72515AEA01E00EBC480 /* topcoder.png in Resources */,
+				EFE9C72C15AEDB2D00EBC480 /* topcoder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
