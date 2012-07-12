@@ -17,6 +17,10 @@ NSMutableData* downloadData;
     int counter;
     int noOfHandles;
 }
+@property (weak, nonatomic) IBOutlet UIButton *backOutlet;
+- (IBAction)back:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *viewOutlet;
+- (IBAction)viewStatus:(id)sender;
 - (IBAction)passData:(id)sender;
 -(NSString*) dataFilePath;
 -(void)readPlist;

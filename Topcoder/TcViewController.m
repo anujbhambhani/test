@@ -13,6 +13,8 @@
 @end
 
 @implementation TcViewController
+@synthesize backOutlet;
+@synthesize viewOutlet;
 @synthesize textField;
 @synthesize secondviewData;
 - (void)viewDidLoad
@@ -55,6 +57,8 @@
 - (void)viewDidUnload
 {
     [self setTextField:nil];
+    [self setViewOutlet:nil];
+    [self setBackOutlet:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -100,9 +104,8 @@
         range1.location+=8;
         NSLog(@"%i %i",range1.location,range1.length);
         
-        NSMutableString *result1 = [string substringWithRange:range1];
+        NSString *result1 = [string substringWithRange:range1];
         NSLog(@"result1=%@",result1);
-        int i=0;
         NSRange range2 = [result1 rangeOfString:@"-"];
         range2.length=range2.location-1;
         range2.location=0;
@@ -136,10 +139,35 @@
         {
             [self writePlist];
             NSLog(@"writing data completed");
+            [self.textField resignFirstResponder];
         }
     }
 }
 
+- (IBAction)viewStatus:(id)sender {
+    [self readPlist];
+    NSMutableString *result=[[NSMutableString alloc]init ];
+    
+    for(id key in dictionary){
+        NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
+        [result appendString:key];
+        [result appendString:@"=>"];
+        [result appendString:[dictionary objectForKey:key]];
+        [result appendString:@"\n"];
+    }
+    NSLog(@"%@",result);
+    [viewOutlet setHidden:NO];
+    [viewOutlet setText:result];
+    
+    
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, viewOutlet.frame.size.width, viewOutlet.frame.size.height)];
+    imgView.image = [UIImage imageNamed: @"topcoder.png"];
+    [viewOutlet addSubview: imgView];
+    [viewOutlet sendSubviewToBack: imgView];
+
+    
+    [backOutlet setHidden:NO];
+}
 - (IBAction)passData:(id)sender {
     //[self writePlist];
     counter=0;
@@ -162,14 +190,11 @@
     @catch (NSException *e) {
         NSLog(@"anuj exception=%@",e);
     }
-    
     [self writePlist];
     [self readPlist];
-    
-    /*TcViewControllerDataDisplay *second=[[TcViewControllerDataDisplay alloc ]initWithNibName:nil bundle:nil];
-     self.secondviewData = second;
-     secondviewData.passedValue=textField.text;
-     [self presentModalViewController:second animated:YES];
-     */
+}
+- (IBAction)back:(id)sender {
+    [viewOutlet setHidden:YES];
+    [backOutlet setHidden:YES];
 }
 @end
