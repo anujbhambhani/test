@@ -10,7 +10,9 @@
 
 @class TcViewController;
 
-@interface TcAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TcAppDelegate : UIResponder <UIApplicationDelegate>{
+    NSDictionary *dictionary;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

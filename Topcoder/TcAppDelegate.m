@@ -15,8 +15,37 @@
 @synthesize window = _window;
 @synthesize viewController = _viewController;
 
+
+
+-(NSString*) dataFilePath{
+    NSArray* path=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString* documentDirectory = [path objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"handles.plist"];
+}
+-(void)readPlist{
+    NSString *filePath= [self dataFilePath];
+    if([[NSFileManager defaultManager]fileExistsAtPath:filePath])
+    {
+        dictionary=[[NSMutableDictionary alloc]initWithContentsOfFile:filePath];
+        NSLog(@"%@",dictionary);
+        NSLog(@"%@",filePath);
+        
+        for(id key in dictionary)
+            NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
+    }
+    else {
+        dictionary=[[NSMutableDictionary alloc]init];
+    }
+}
+-(void)writePlist{
+    [dictionary writeToFile:[self dataFilePath] atomically:YES];
+}
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[TcViewController alloc] initWithNibName:@"TcViewController" bundle:nil];

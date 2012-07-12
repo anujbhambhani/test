@@ -43,6 +43,9 @@
         for(id key in dictionary)
             NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
     }
+    else {
+        dictionary=[[NSMutableDictionary alloc]init];
+    }
 }
 -(void)writePlist{
     [dictionary writeToFile:[self dataFilePath] atomically:YES];
@@ -160,6 +163,10 @@
             [backOutlet setEnabled:YES];
             [viewStatusOutlet setEnabled:YES];
             textField.text=@"";
+            if(handleNotFound)
+                [textField setPlaceholder:@"Handle Not Found."];
+            else
+                [textField setPlaceholder:@"Handle added"];
         }
     }
 }
