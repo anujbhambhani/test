@@ -7,49 +7,25 @@
 //
 
 #import "TcViewController.h"
-
+#import "PlistOperations.h"
 @interface TcViewController ()
 
 @end
 
 @implementation TcViewController
+
 @synthesize viewStatusOutlet;
 @synthesize passDataOutlet;
 @synthesize backOutlet;
 @synthesize viewOutlet;
 @synthesize textField;
-@synthesize secondviewData;
+@synthesize plistOperations;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-
--(NSString*) dataFilePath{
-    NSArray* path=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
-    NSString* documentDirectory = [path objectAtIndex:0];
-    return [documentDirectory stringByAppendingPathComponent:@"handles.plist"];
-}
--(void)readPlist{
-    NSString *filePath= [self dataFilePath];
-    if([[NSFileManager defaultManager]fileExistsAtPath:filePath])
-    {
-        dictionary=[[NSMutableDictionary alloc]initWithContentsOfFile:filePath];
-        NSLog(@"%@",dictionary);
-        NSLog(@"%@",filePath);
-        
-        for(id key in dictionary)
-            NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
-    }
-    else {
-        dictionary=[[NSMutableDictionary alloc]init];
-    }
-}
--(void)writePlist{
-    [dictionary writeToFile:[self dataFilePath] atomically:YES];
-}
 
 //to make a keyboard disappear when user presses enter key
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField 
@@ -148,10 +124,10 @@
         range.length = range.length-7- [result1 length] -2;
         
         NSString *result = [string substringWithRange:range];
-        [dictionary setObject: result forKey: result1];
+        [plistOperations.dictionary setObject: result forKey: result1];
         if(counter==noOfHandles&&(!handleNotFound))
         {
-            [self writePlist];
+            [plistOperations writePlist];
             NSLog(@"writing data completed");
             
         }
@@ -172,14 +148,15 @@
 }
 
 - (IBAction)viewStatus:(id)sender {
-    [self readPlist];
+    plistOperations = [[PlistOperations alloc]init];
+    [plistOperations readPlist];
     NSMutableString *result=[[NSMutableString alloc]init ];
     
-    for(id key in dictionary){
-        NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
+    for(id key in plistOperations.dictionary){
+        NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
         [result appendString:key];
         [result appendString:@"=>"];
-        [result appendString:[dictionary objectForKey:key]];
+        [result appendString:[plistOperations.dictionary objectForKey:key]];
         [result appendString:@"\n"];
     }
     NSLog(@"%@",result);
@@ -196,7 +173,7 @@
     [backOutlet setHidden:NO];
 }
 - (IBAction)passData:(id)sender {
-     [textField setPlaceholder:@""];
+    [textField setPlaceholder:@""];
     handleNotFound=NO;
     //[self writePlist];
     handleToTrack=textField.text;
@@ -207,17 +184,19 @@
     [backOutlet setEnabled:NO];
     [viewStatusOutlet setEnabled:NO];
     counter=0;
-    [self readPlist];
-    [dictionary setObject: @"1" forKey: handleToTrack];
-    for(id key in dictionary){
-        NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
+    plistOperations=[[PlistOperations alloc]init];
+    [plistOperations readPlist];
+    [plistOperations.dictionary setObject: @"1" forKey: handleToTrack];
+     
+    for(id key in plistOperations.dictionary){
+        NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
     }   
-    noOfHandles = [dictionary count];
+    noOfHandles = [plistOperations.dictionary count];
     @try{
-        for(id key in dictionary){
-            NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
+        for(id key in plistOperations.dictionary){
+            NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
             currentHandle=key;
-            NSMutableString *hit=[NSMutableString stringWithString:@"https://www.otinn.com/topcoder/al/comparer.php?user1=petr&user2="];
+            NSMutableString *hit=[NSMutableString stringWithString:@"https://www.otinn.com/topcoder/al/comparer.php?user1=petr&user2="]; 
             [hit appendString:key];
             NSLog(@"Hitting url%@",hit);
             [self loadData:hit];
@@ -228,6 +207,7 @@
     }
     //[self writePlist];
     //[self readPlist];
+  
 }
 - (IBAction)back:(id)sender {
     [viewOutlet setHidden:YES];

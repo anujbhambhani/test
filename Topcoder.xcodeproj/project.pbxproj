@@ -21,6 +21,7 @@
 		EF90F21E15ACC97600CB7BFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF90F21C15ACC97600CB7BFC /* InfoPlist.strings */; };
 		EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F22015ACC97600CB7BFC /* TopcoderTests.m */; };
 		EFE9C72C15AEDB2D00EBC480 /* topcoder.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE9C72B15AEDB2D00EBC480 /* topcoder.png */; };
+		EFE9C7A015AF922700EBC480 /* PlistOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C79F15AF922700EBC480 /* PlistOperations.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		EF90F21F15ACC97600CB7BFC /* TopcoderTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopcoderTests.h; sourceTree = "<group>"; };
 		EF90F22015ACC97600CB7BFC /* TopcoderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopcoderTests.m; sourceTree = "<group>"; };
 		EFE9C72B15AEDB2D00EBC480 /* topcoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topcoder.png; sourceTree = "<group>"; };
+		EFE9C79E15AF922700EBC480 /* PlistOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistOperations.h; sourceTree = "<group>"; };
+		EFE9C79F15AF922700EBC480 /* PlistOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistOperations.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				EF90F20815ACC97600CB7BFC /* TcViewController.m */,
 				EF90F20A15ACC97600CB7BFC /* TcViewController.xib */,
 				EF90F1FC15ACC97600CB7BFC /* Supporting Files */,
+				EFE9C79E15AF922700EBC480 /* PlistOperations.h */,
+				EFE9C79F15AF922700EBC480 /* PlistOperations.m */,
 			);
 			path = Topcoder;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				EF90F20215ACC97600CB7BFC /* main.m in Sources */,
 				EF90F20615ACC97600CB7BFC /* TcAppDelegate.m in Sources */,
 				EF90F20915ACC97600CB7BFC /* TcViewController.m in Sources */,
+				EFE9C7A015AF922700EBC480 /* PlistOperations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

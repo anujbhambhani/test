@@ -6,14 +6,12 @@
 //  Copyright (c) 2012 anuj.bhambhani@gmail.com. All rights reserved.
 
 #import <UIKit/UIKit.h>
-#import "TcViewControllerDataDisplay.h"
+#import "PlistOperations.h"
 NSMutableData* downloadData;
 @interface TcViewController : UIViewController<UITextFieldDelegate>{
-    TcViewControllerDataDisplay *secondviewData;
     NSString *listPath;
     NSMutableArray *array; 
     NSMutableString *currentHandle;
-    NSMutableDictionary *dictionary;
     int counter;
     int noOfHandles;
     bool handleNotFound;
@@ -30,5 +28,5 @@ NSMutableData* downloadData;
 -(void)readPlist;
 -(void)writePlist;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (nonatomic,retain) TcViewControllerDataDisplay *secondviewData;
+@property PlistOperations *plistOperations;
 @end
