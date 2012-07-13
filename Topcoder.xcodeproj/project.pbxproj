@@ -22,6 +22,10 @@
 		EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF90F22015ACC97600CB7BFC /* TopcoderTests.m */; };
 		EFE9C72C15AEDB2D00EBC480 /* topcoder.png in Resources */ = {isa = PBXBuildFile; fileRef = EFE9C72B15AEDB2D00EBC480 /* topcoder.png */; };
 		EFE9C7A015AF922700EBC480 /* PlistOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C79F15AF922700EBC480 /* PlistOperations.m */; };
+		EFE9C7B915AFF37100EBC480 /* RegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */; };
+		EFE9C7BA15AFF37100EBC480 /* RegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */; };
+		EFE9C7BB15AFF37100EBC480 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B815AFF37100EBC480 /* URLParser.m */; };
+		EFE9C7BC15AFF37100EBC480 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B815AFF37100EBC480 /* URLParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		EFE9C72B15AEDB2D00EBC480 /* topcoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topcoder.png; sourceTree = "<group>"; };
 		EFE9C79E15AF922700EBC480 /* PlistOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistOperations.h; sourceTree = "<group>"; };
 		EFE9C79F15AF922700EBC480 /* PlistOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistOperations.m; sourceTree = "<group>"; };
+		EFE9C7B515AFF37100EBC480 /* RegexMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexMatcher.h; sourceTree = "<group>"; };
+		EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexMatcher.m; sourceTree = "<group>"; };
+		EFE9C7B715AFF37100EBC480 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
+		EFE9C7B815AFF37100EBC480 /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +139,10 @@
 		EF90F1FC15ACC97600CB7BFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EFE9C7B515AFF37100EBC480 /* RegexMatcher.h */,
+				EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */,
+				EFE9C7B715AFF37100EBC480 /* URLParser.h */,
+				EFE9C7B815AFF37100EBC480 /* URLParser.m */,
 				EFE9C72B15AEDB2D00EBC480 /* topcoder.png */,
 				EF90F1FD15ACC97600CB7BFC /* Topcoder-Info.plist */,
 				EF90F1FE15ACC97600CB7BFC /* InfoPlist.strings */,
@@ -272,6 +284,8 @@
 				EF90F20615ACC97600CB7BFC /* TcAppDelegate.m in Sources */,
 				EF90F20915ACC97600CB7BFC /* TcViewController.m in Sources */,
 				EFE9C7A015AF922700EBC480 /* PlistOperations.m in Sources */,
+				EFE9C7B915AFF37100EBC480 /* RegexMatcher.m in Sources */,
+				EFE9C7BB15AFF37100EBC480 /* URLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */,
+				EFE9C7BA15AFF37100EBC480 /* RegexMatcher.m in Sources */,
+				EFE9C7BC15AFF37100EBC480 /* URLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

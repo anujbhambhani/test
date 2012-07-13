@@ -8,6 +8,9 @@
 
 #import "TcViewController.h"
 #import "PlistOperations.h"
+#import "URLParser.h"
+#import "RegexMatcher.h"
+
 @interface TcViewController ()
 
 @end
@@ -51,102 +54,6 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-
--(void)loadData: (NSString *)dataPath{
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:dataPath] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-    [NSURLConnection connectionWithRequest:request delegate:self];
-}
--(void) connection:(NSURLConnection*) connection didReceiveData:(NSData *)data{
-    [downloadData appendData:data];
-}
-
--(void) connection:(NSURLConnection*) connection didFailWithError:(NSError *)error{
-    NSLog(@"Anuj Failed %@",[error description]);
-    [self.textField resignFirstResponder];
-    [textField setEnabled:YES];
-    [passDataOutlet setEnabled:YES];
-    [backOutlet setEnabled:YES];
-    [viewStatusOutlet setEnabled:YES];
-    textField.text=@"";
-    [textField setPlaceholder:@"No Internet connection."];
-}
--(void) connection:(NSURLConnection*) connection didReceiveResponse:(NSURLResponse *)response{
-    downloadData = [NSMutableData data];
-}
-
--(void) connectionDidFinishLoading:(NSURLConnection *)connection{
-    @synchronized(self){
-        counter++;
-        NSString *dataString=[[NSString alloc]initWithData:downloadData encoding:NSUTF8StringEncoding];
-        dataString = [dataString lowercaseString];
-        NSMutableString *string1 = [NSMutableString stringWithString: dataString];
-        //adding regex
-        NSMutableString *string  =string1;
-        NSError  *error  = NULL;
-        NSMutableString *regx1=[NSMutableString stringWithString:@"petr vs "];
-        NSRegularExpression *regex1 = [NSRegularExpression 
-                                       regularExpressionWithPattern:regx1
-                                       options:0
-                                       error:&error];
-        NSRange range1   = [regex1 rangeOfFirstMatchInString:string
-                                                     options:0 
-                                                       range:NSMakeRange(0, [string length])];
-        if(range1.length==0)
-        {
-            handleNotFound=YES;
-            return;
-        }
-        range1.length+=20;
-        range1.location+=8;
-        NSLog(@"%i %i",range1.location,range1.length);
-        
-        NSString *result1 = [string substringWithRange:range1];
-        NSLog(@"result1=%@",result1);
-        NSRange range2 = [result1 rangeOfString:@"-"];
-        range2.length=range2.location-1;
-        range2.location=0;
-        result1 = [result1 substringWithRange:range2];
-        NSLog(@"result1=%@}}",result1);
-        NSMutableString *regx=[NSMutableString stringWithString:@"title=\".?.?.?.?.?\">"];
-        [regx appendString:result1];
-        
-        NSRegularExpression *regex = [NSRegularExpression 
-                                      regularExpressionWithPattern:regx
-                                      options:0
-                                      error:&error];
-        NSRange range   = [regex rangeOfFirstMatchInString:string
-                                                   options:0 
-                                                     range:NSMakeRange(0, [string length])];
-        
-        
-        NSLog(@"%i %i",range.location,range.length);
-        range.location = range.location+7;
-        range.length = range.length-7- [result1 length] -2;
-        
-        NSString *result = [string substringWithRange:range];
-        [plistOperations.dictionary setObject: result forKey: result1];
-        if(counter==noOfHandles&&(!handleNotFound))
-        {
-            [plistOperations writePlist];
-            NSLog(@"writing data completed");
-            
-        }
-        if(counter==noOfHandles)
-        {
-            [self.textField resignFirstResponder];
-            [textField setEnabled:YES];
-            [passDataOutlet setEnabled:YES];
-            [backOutlet setEnabled:YES];
-            [viewStatusOutlet setEnabled:YES];
-            textField.text=@"";
-            if(handleNotFound)
-                [textField setPlaceholder:@"Handle Not Found."];
-            else
-                [textField setPlaceholder:@"Handle added"];
-        }
-    }
-}
-
 - (IBAction)viewStatus:(id)sender {
     plistOperations = [[PlistOperations alloc]init];
     [plistOperations readPlist];
@@ -168,14 +75,16 @@
     imgView.image = [UIImage imageNamed: @"topcoder.png"];
     [viewOutlet addSubview: imgView];
     [viewOutlet sendSubviewToBack: imgView];
-
+    
     
     [backOutlet setHidden:NO];
 }
 - (IBAction)passData:(id)sender {
+    URLParser *urlParser =[[URLParser alloc]init];
+    RegexMatcher *regexMatcher = [[RegexMatcher alloc]init];
+    NSRange range;
     [textField setPlaceholder:@""];
     handleNotFound=NO;
-    //[self writePlist];
     handleToTrack=textField.text;
     textField.text=@"Adding to track list...";
     handleToTrack = [handleToTrack lowercaseString];
@@ -187,27 +96,76 @@
     plistOperations=[[PlistOperations alloc]init];
     [plistOperations readPlist];
     [plistOperations.dictionary setObject: @"1" forKey: handleToTrack];
-     
+    
     for(id key in plistOperations.dictionary){
         NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
     }   
     noOfHandles = [plistOperations.dictionary count];
     @try{
-        for(id key in plistOperations.dictionary){
+        NSString *data;
+        NSDictionary *dict = [[NSDictionary alloc]initWithDictionary:plistOperations.dictionary];
+        for(id key in dict){
             NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
             currentHandle=key;
             NSMutableString *hit=[NSMutableString stringWithString:@"https://www.otinn.com/topcoder/al/comparer.php?user1=petr&user2="]; 
             [hit appendString:key];
             NSLog(@"Hitting url%@",hit);
-            [self loadData:hit];
+            data = [urlParser parseUrl:hit];
+            if(data==nil)
+            {
+                [self.textField resignFirstResponder];
+                [textField setEnabled:YES];
+                [passDataOutlet setEnabled:YES];
+                [backOutlet setEnabled:YES];
+                [viewStatusOutlet setEnabled:YES];
+                textField.text=@"";
+                [textField setPlaceholder:@"No Internet connection."];
+                return;
+            }
+            
+            data = [data lowercaseString];
+            
+            
+            NSMutableString *regx=[NSMutableString stringWithString:@"title=\".?.?.?.?.?\">"];
+            [regx appendString:key];
+            [regexMatcher setUrlString:data];
+            range = [regexMatcher matchRegex:regx];
+            if(range.length==0)
+            {
+                handleNotFound = YES;
+                break;
+            }
+            NSLog(@"%i %i",range.location,range.length);
+            range.location = range.location+7;
+            range.length = range.length-7- [key length] -2;
+            
+            NSString *result = [data substringWithRange:range];
+            [plistOperations.dictionary setObject: result forKey: key];
         }
+        if(!handleNotFound)
+        {
+            [plistOperations writePlist];
+            NSLog(@"writing data completed");
+            
+        }
+        [self.textField resignFirstResponder];
+        [textField setEnabled:YES];
+        [passDataOutlet setEnabled:YES];
+        [backOutlet setEnabled:YES];
+        [viewStatusOutlet setEnabled:YES];
+        textField.text=@"";
+        if(handleNotFound)
+            [textField setPlaceholder:@"Handle Not Found."];
+        else
+            [textField setPlaceholder:@"Handle added"];
+        
+        
     }
     @catch (NSException *e) {
-        NSLog(@"anuj exception=%@",e);
+        NSLog(@"raised exception=%@",e);
     }
-    //[self writePlist];
-    //[self readPlist];
-  
+    
+    
 }
 - (IBAction)back:(id)sender {
     [viewOutlet setHidden:YES];
