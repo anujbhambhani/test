@@ -26,6 +26,8 @@
 		EFE9C7BA15AFF37100EBC480 /* RegexMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */; };
 		EFE9C7BB15AFF37100EBC480 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B815AFF37100EBC480 /* URLParser.m */; };
 		EFE9C7BC15AFF37100EBC480 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7B815AFF37100EBC480 /* URLParser.m */; };
+		EFE9C7C015AFFF7000EBC480 /* TcSRMTimeDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7BF15AFFF7000EBC480 /* TcSRMTimeDifference.m */; };
+		EFE9C7C115AFFF7000EBC480 /* TcSRMTimeDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE9C7BF15AFFF7000EBC480 /* TcSRMTimeDifference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexMatcher.m; sourceTree = "<group>"; };
 		EFE9C7B715AFF37100EBC480 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
 		EFE9C7B815AFF37100EBC480 /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
+		EFE9C7BE15AFFF7000EBC480 /* TcSRMTimeDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TcSRMTimeDifference.h; sourceTree = "<group>"; };
+		EFE9C7BF15AFFF7000EBC480 /* TcSRMTimeDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TcSRMTimeDifference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				EF90F1FE15ACC97600CB7BFC /* InfoPlist.strings */,
 				EF90F20115ACC97600CB7BFC /* main.m */,
 				EF90F20315ACC97600CB7BFC /* Topcoder-Prefix.pch */,
+				EFE9C7BE15AFFF7000EBC480 /* TcSRMTimeDifference.h */,
+				EFE9C7BF15AFFF7000EBC480 /* TcSRMTimeDifference.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -286,6 +292,7 @@
 				EFE9C7A015AF922700EBC480 /* PlistOperations.m in Sources */,
 				EFE9C7B915AFF37100EBC480 /* RegexMatcher.m in Sources */,
 				EFE9C7BB15AFF37100EBC480 /* URLParser.m in Sources */,
+				EFE9C7C015AFFF7000EBC480 /* TcSRMTimeDifference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +303,7 @@
 				EF90F22115ACC97600CB7BFC /* TopcoderTests.m in Sources */,
 				EFE9C7BA15AFF37100EBC480 /* RegexMatcher.m in Sources */,
 				EFE9C7BC15AFF37100EBC480 /* URLParser.m in Sources */,
+				EFE9C7C115AFFF7000EBC480 /* TcSRMTimeDifference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
