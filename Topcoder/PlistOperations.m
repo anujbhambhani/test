@@ -32,19 +32,16 @@
     NSString *filePath= [self dataFilePath];
     if([[NSFileManager defaultManager]fileExistsAtPath:filePath])
     {
-        dictionary=[[NSMutableDictionary alloc]initWithContentsOfFile:filePath];
-        NSLog(@"%@",dictionary);
+        self.dictionary=[self.dictionary initWithContentsOfFile:filePath];
+        NSLog(@"%@",self.dictionary);
         NSLog(@"%@",filePath);
         
-        for(id key in dictionary)
-            NSLog(@"key=%@ value=%@", key, [dictionary objectForKey:key]);
-    }
-    else {
-        dictionary=[[NSMutableDictionary alloc]init];
+        for(id key in self.dictionary)
+            NSLog(@"key=%@ value=%@", key, [self.dictionary objectForKey:key]);
     }
 }
 -(void)writePlist{
-    [dictionary writeToFile:[self dataFilePath] atomically:YES];
+    [self.dictionary writeToFile:[self dataFilePath] atomically:YES];
 }
 
 
