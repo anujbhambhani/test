@@ -22,6 +22,7 @@
     if(data==nil)
     {
         NSLog(@"Check Internet Connection");
+        return nil;
     }
     else{
         NSLog(@"data=%u",[data length]);
@@ -32,6 +33,7 @@
         NSRange range1=[regexMatcher matchRegex:regex];
         if(range1.length==0){
             NSLog(@"Next SRM Data not found");
+            return nil;
         }
         else{
             range1.length+=150;

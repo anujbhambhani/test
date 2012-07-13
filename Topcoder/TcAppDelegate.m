@@ -37,6 +37,35 @@
 {
     TcSRMTimeDifference *tcSRMTimeDifference=[[TcSRMTimeDifference alloc]init];
     NSDateComponents *components = [[tcSRMTimeDifference getTimeDifference] copy];
+    if(components ==nil)
+    {
+        NSDate *now=[[NSDate alloc]init];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy MMM dd, HH:mm"];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithName:[[NSTimeZone localTimeZone] name]]];
+        
+        NSCalendar *calender = [NSCalendar autoupdatingCurrentCalendar];
+        NSDateComponents *dateComponents = [calender components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:now];
+        NSDateComponents *timeComponents = [calender components:(NSHourCalendarUnit| NSMinuteCalendarUnit| NSSecondCalendarUnit) fromDate:now];
+        NSDateComponents * temp = [[NSDateComponents alloc]init];
+        [temp setYear:[dateComponents year]];
+        [temp setMonth:[dateComponents month]];
+        [temp setDay:[dateComponents day]];
+        [temp setHour:[timeComponents hour]];
+        [temp setMinute:[timeComponents minute]];
+        [temp setSecond:[timeComponents second]+5];
+        NSDate *fireTime = [calender dateFromComponents:temp];
+        
+        //set up the notifier
+        UILocalNotification *localNotification = [[UILocalNotification alloc]init];
+        localNotification.fireDate = fireTime;
+        localNotification.alertBody = @"Notification not schduled. Please check internet connection";
+        localNotification.alertAction= @"View";
+        NSDictionary *dict = [NSDictionary dictionaryWithObject:@"obj"  forKey:@"key"];
+        localNotification.userInfo = dict;
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        return;
+    }
     NSLog(@"hour=%i\n",components.hour);
     NSDate *now=[[NSDate alloc]init];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -57,12 +86,12 @@
     [temp setHour:[timeComponents hour]+[components hour]];
     [temp setMinute:[timeComponents minute]+[components minute]];
     //for testing 
-//    [temp setYear:[dateComponents year]];
-//    [temp setMonth:[dateComponents month]];
-//    [temp setDay:[dateComponents day]];
-//    [temp setHour:[timeComponents hour]];
-//    [temp setMinute:[timeComponents minute]];
-//    [temp setSecond:[timeComponents second]+[components hour]];
+    //    [temp setYear:[dateComponents year]];
+    //    [temp setMonth:[dateComponents month]];
+    //    [temp setDay:[dateComponents day]];
+    //    [temp setHour:[timeComponents hour]];
+    //    [temp setMinute:[timeComponents minute]];
+    //    [temp setSecond:[timeComponents second]+[components hour]];
     NSDate *fireTime = [calender dateFromComponents:temp];
     
     //set up the notifier
