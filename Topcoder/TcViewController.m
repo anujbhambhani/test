@@ -55,10 +55,59 @@
 }
 
 - (IBAction)viewStatus:(id)sender {
-    plistOperations = [[PlistOperations alloc]init];
-    [plistOperations readPlist];
-    NSMutableString *result=[[NSMutableString alloc]init ];
     
+    [viewOutlet setHidden:NO];
+    [backOutlet setHidden:NO];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, viewOutlet.frame.size.width, viewOutlet.frame.size.height)];
+    imgView.image = [UIImage imageNamed: @"topcoder.png"];
+    [viewOutlet addSubview: imgView];
+    [viewOutlet sendSubviewToBack: imgView];
+    URLParser *urlParser =[[URLParser alloc]init];
+    RegexMatcher *regexMatcher = [[RegexMatcher alloc]init];
+    NSRange range;
+    
+    plistOperations=[[PlistOperations alloc]init];
+    [plistOperations readPlist];
+    
+    for(id key in plistOperations.dictionary){
+        NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
+    }   
+    @try{
+        NSString *data;
+        NSDictionary *dict = [[NSDictionary alloc]initWithDictionary:plistOperations.dictionary];
+        for(id key in dict){
+            NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
+            currentHandle=key;
+            NSMutableString *hit=[NSMutableString stringWithString:@"https://www.otinn.com/topcoder/al/comparer.php?user1=petr&user2="]; 
+            [hit appendString:key];
+            NSLog(@"Hitting url%@",hit);
+            data = [urlParser parseUrl:hit];
+            if(data==nil)
+            {
+                [viewOutlet setText:@"No Internet connection."];
+                return;
+            }
+            
+            data = [data lowercaseString];
+            
+            
+            NSMutableString *regx=[NSMutableString stringWithString:@"title=\".?.?.?.?.?\">"];
+            [regx appendString:key];
+            [regexMatcher setUrlString:data];
+            range = [regexMatcher matchRegex:regx];
+            NSLog(@"%i %i",range.location,range.length);
+            range.location = range.location+7;
+            range.length = range.length-7- [key length] -2;
+            
+            NSString *result = [data substringWithRange:range];
+            [plistOperations.dictionary setObject: result forKey: key];
+        }
+        [plistOperations writePlist];
+    }
+    @catch (NSException *e) {
+        NSLog(@"raised exception=%@",e);
+    }
+    NSMutableString *result=[[NSMutableString alloc]init ];
     for(id key in plistOperations.dictionary){
         NSLog(@"key=%@ value=%@", key, [plistOperations.dictionary objectForKey:key]);
         [result appendString:key];
@@ -67,17 +116,8 @@
         [result appendString:@"\n"];
     }
     NSLog(@"%@",result);
-    [viewOutlet setHidden:NO];
     [viewOutlet setText:result];
     
-    
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame: CGRectMake(0, 0, viewOutlet.frame.size.width, viewOutlet.frame.size.height)];
-    imgView.image = [UIImage imageNamed: @"topcoder.png"];
-    [viewOutlet addSubview: imgView];
-    [viewOutlet sendSubviewToBack: imgView];
-    
-    
-    [backOutlet setHidden:NO];
 }
 - (IBAction)passData:(id)sender {
     URLParser *urlParser =[[URLParser alloc]init];
