@@ -8,6 +8,23 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>logo57x57</string>
+				<string>logo114x114</string>
+				<string>logo120x120</string>
+				<string>logo80x80</string>
+				<string>logo58x58</string>
+				<string>logo29x29</string>
+			</array>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.pocketgems.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -24,6 +41,39 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchImages</key>
+	<array>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>splash640x1136</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 568}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>splash640x960</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 480}</string>
+		</dict>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>splash640x960</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 480}</string>
+		</dict>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -31,8 +81,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75AE6BF3190474D8001B9034 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6BF2190474D8001B9034 /* Images.xcassets */; };
+		75AE6C07190477FB001B9034 /* logo29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C01190477FB001B9034 /* logo29x29.png */; };
+		75AE6C08190477FB001B9034 /* logo57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C02190477FB001B9034 /* logo57x57.png */; };
+		75AE6C09190477FB001B9034 /* logo58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C03190477FB001B9034 /* logo58x58.png */; };
+		75AE6C0A190477FB001B9034 /* logo80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C04190477FB001B9034 /* logo80x80.png */; };
+		75AE6C0B190477FB001B9034 /* logo114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C05190477FB001B9034 /* logo114x114.png */; };
+		75AE6C0C190477FB001B9034 /* logo120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C06190477FB001B9034 /* logo120x120.png */; };
+		75AE6C1319047A6C001B9034 /* splash640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C1119047A6C001B9034 /* splash640x960.png */; };
+		75AE6C1419047A6C001B9034 /* splash640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 75AE6C1219047A6C001B9034 /* splash640x1136.png */; };
 		EF90F1F615ACC97600CB7BFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F515ACC97600CB7BFC /* UIKit.framework */; };
 		EF90F1F815ACC97600CB7BFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F715ACC97600CB7BFC /* Foundation.framework */; };
 		EF90F1FA15ACC97600CB7BFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF90F1F915ACC97600CB7BFC /* CoreGraphics.framework */; };
@@ -41,6 +50,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75AE6BF2190474D8001B9034 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		75AE6C01190477FB001B9034 /* logo29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo29x29.png; sourceTree = "<group>"; };
+		75AE6C02190477FB001B9034 /* logo57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo57x57.png; sourceTree = "<group>"; };
+		75AE6C03190477FB001B9034 /* logo58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo58x58.png; sourceTree = "<group>"; };
+		75AE6C04190477FB001B9034 /* logo80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo80x80.png; sourceTree = "<group>"; };
+		75AE6C05190477FB001B9034 /* logo114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo114x114.png; sourceTree = "<group>"; };
+		75AE6C06190477FB001B9034 /* logo120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo120x120.png; sourceTree = "<group>"; };
+		75AE6C1119047A6C001B9034 /* splash640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash640x960.png; sourceTree = "<group>"; };
+		75AE6C1219047A6C001B9034 /* splash640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash640x1136.png; sourceTree = "<group>"; };
 		EF90F1F115ACC97500CB7BFC /* Topcoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Topcoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF90F1F515ACC97600CB7BFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF90F1F715ACC97600CB7BFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,6 +113,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75AE6BF419047705001B9034 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75AE6C01190477FB001B9034 /* logo29x29.png */,
+				75AE6C02190477FB001B9034 /* logo57x57.png */,
+				75AE6C03190477FB001B9034 /* logo58x58.png */,
+				75AE6C04190477FB001B9034 /* logo80x80.png */,
+				75AE6C1119047A6C001B9034 /* splash640x960.png */,
+				75AE6C1219047A6C001B9034 /* splash640x1136.png */,
+				75AE6C05190477FB001B9034 /* logo114x114.png */,
+				75AE6C06190477FB001B9034 /* logo120x120.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		EF90F1E615ACC97500CB7BFC = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +169,7 @@
 				EF90F1FC15ACC97600CB7BFC /* Supporting Files */,
 				EFE9C79E15AF922700EBC480 /* PlistOperations.h */,
 				EFE9C79F15AF922700EBC480 /* PlistOperations.m */,
+				75AE6BF2190474D8001B9034 /* Images.xcassets */,
 			);
 			path = Topcoder;
 			sourceTree = "<group>";
@@ -143,6 +177,7 @@
 		EF90F1FC15ACC97600CB7BFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75AE6BF419047705001B9034 /* Resources */,
 				EFE9C7B515AFF37100EBC480 /* RegexMatcher.h */,
 				EFE9C7B615AFF37100EBC480 /* RegexMatcher.m */,
 				EFE9C7B715AFF37100EBC480 /* URLParser.h */,
@@ -249,9 +284,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75AE6C09190477FB001B9034 /* logo58x58.png in Resources */,
+				75AE6C0A190477FB001B9034 /* logo80x80.png in Resources */,
 				EF90F20015ACC97600CB7BFC /* InfoPlist.strings in Resources */,
+				75AE6C08190477FB001B9034 /* logo57x57.png in Resources */,
+				75AE6BF3190474D8001B9034 /* Images.xcassets in Resources */,
 				EF90F20C15ACC97600CB7BFC /* TcViewController.xib in Resources */,
+				75AE6C1319047A6C001B9034 /* splash640x960.png in Resources */,
+				75AE6C0B190477FB001B9034 /* logo114x114.png in Resources */,
 				EFE9C72C15AEDB2D00EBC480 /* topcoder.png in Resources */,
+				75AE6C1419047A6C001B9034 /* splash640x1136.png in Resources */,
+				75AE6C07190477FB001B9034 /* logo29x29.png in Resources */,
+				75AE6C0C190477FB001B9034 /* logo120x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +440,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Topcoder/Topcoder-Prefix.pch";
 				INFOPLIST_FILE = "Topcoder/Topcoder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -407,6 +452,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Topcoder/Topcoder-Prefix.pch";
 				INFOPLIST_FILE = "Topcoder/Topcoder-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
